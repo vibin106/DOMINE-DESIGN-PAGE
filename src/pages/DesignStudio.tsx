@@ -35,6 +35,7 @@ import { BrandKitsPanel } from "@/components/design-studio/BrandKitsPanel";
 import { Canvas } from "@/components/design-studio/Canvas";
 import { ViewSwitcher } from "@/components/design-studio/ViewSwitcher";
 import { TShirtColorPicker } from "@/components/design-studio/TShirtColorPicker";
+import { ObjectControls } from "@/components/design-studio/ObjectControls";
 import { useCanvasStore } from "@/store/canvasStore";
 
 const DesignStudio = () => {
@@ -180,7 +181,7 @@ const DesignStudio = () => {
         )}
 
         {/* Canvas - Center */}
-        <main className="flex-1 bg-muted/20 overflow-auto">
+        <main className="flex-1 bg-muted/20 overflow-auto min-h-0">
           <div className="h-full flex flex-col items-center justify-center p-8 gap-4">
             {/* View Switcher */}
             <ViewSwitcher />
@@ -193,15 +194,15 @@ const DesignStudio = () => {
 
               {/* Bottom Toolbar */}
               <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2 shadow-lg">
-                <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Button variant="ghost" size="icon" className="h-8 w-8" onClick={undo}>
                   <Undo2 className="h-4 w-4" />
                 </Button>
-                <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Button variant="ghost" size="icon" className="h-8 w-8" onClick={redo}>
                   <Redo2 className="h-4 w-4" />
                 </Button>
                 <div className="h-6 w-px bg-border mx-1" />
                 <Button variant="ghost" size="sm" className="h-8">
-                  14%
+                  100%
                 </Button>
                 <div className="h-6 w-px bg-border mx-1" />
                 <Button variant="ghost" size="icon" className="h-8 w-8">
@@ -218,6 +219,9 @@ const DesignStudio = () => {
         {/* Right Sidebar - Project Info & Tools */}
         <aside className="w-80 border-l border-border bg-card p-4 overflow-y-auto">
           <div className="space-y-6">
+            {/* Object Controls - NEW */}
+            <ObjectControls />
+            
             {/* T-shirt Color Picker */}
             <TShirtColorPicker />
             

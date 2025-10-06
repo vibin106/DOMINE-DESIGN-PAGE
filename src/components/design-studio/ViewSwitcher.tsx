@@ -1,30 +1,25 @@
 import { Button } from "@/components/ui/button";
-import { TShirtView, useCanvasStore } from "@/store/canvasStore";
-import { cn } from "@/lib/utils";
-
-const views: { id: TShirtView; label: string }[] = [
-  { id: 'front', label: 'Front' },
-  { id: 'left', label: 'Left' },
-  { id: 'right', label: 'Right' },
-  { id: 'back', label: 'Back' }
-];
+import { useCanvasStore } from "@/store/canvasStore";
+import { TShirtView } from "@/store/canvasStore";
 
 export const ViewSwitcher = () => {
   const currentView = useCanvasStore((state) => state.currentView);
   const setCurrentView = useCanvasStore((state) => state.setCurrentView);
 
+  const views: { value: TShirtView; label: string }[] = [
+    { value: 'front', label: 'Front' },
+    { value: 'back', label: 'Back' }
+  ];
+
   return (
-    <div className="flex items-center gap-2 bg-card border border-border rounded-lg p-1">
+    <div className="flex gap-2 bg-card border border-border rounded-lg p-1">
       {views.map((view) => (
         <Button
-          key={view.id}
-          variant={currentView === view.id ? "default" : "ghost"}
+          key={view.value}
+          variant={currentView === view.value ? "default" : "ghost"}
           size="sm"
-          className={cn(
-            "text-sm",
-            currentView === view.id && "bg-primary text-primary-foreground"
-          )}
-          onClick={() => setCurrentView(view.id)}
+          onClick={() => setCurrentView(view.value)}
+          className={currentView === view.value ? "bg-primary" : ""}
         >
           {view.label}
         </Button>

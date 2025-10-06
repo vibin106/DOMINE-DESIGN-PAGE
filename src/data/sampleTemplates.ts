@@ -1,14 +1,16 @@
 import { CanvasObject } from '@/store/canvasStore';
 import template1 from '@/assets/templates/template-1.png';
 import template2 from '@/assets/templates/template-2.png';
-import template3 from '@/assets/templates/template-3.png';
+// Removed template3 import since we're not using it anymore
 
-// Define types for template elements without 'id' since those are auto-generated
+
 type TemplateChild = Omit<CanvasObject, 'id' | 'children'>;
+
 
 type TemplateElement = Omit<CanvasObject, 'id' | 'children'> & {
   children?: TemplateChild[];
 };
+
 
 export interface Template {
   id: string;
@@ -17,6 +19,7 @@ export interface Template {
   category: string;
   elements: TemplateElement[];
 }
+
 
 export const sampleTemplates: Template[] = [
   {
@@ -29,7 +32,7 @@ export const sampleTemplates: Template[] = [
         type: 'group',
         x: 250,
         y: 250,
-        name: 'Vintage Badge Group',
+        name: '',
         children: [
           {
             type: 'text',
@@ -39,7 +42,7 @@ export const sampleTemplates: Template[] = [
             fontSize: 32,
             fontFamily: 'Arial',
             fill: '#000000',
-            name: 'Top Text'
+            name: ''
           },
           {
             type: 'text',
@@ -49,7 +52,7 @@ export const sampleTemplates: Template[] = [
             fontSize: 48,
             fontFamily: 'Arial',
             fill: '#000000',
-            name: 'Main Text'
+            name: ''
           },
           {
             type: 'text',
@@ -59,7 +62,7 @@ export const sampleTemplates: Template[] = [
             fontSize: 20,
             fontFamily: 'Arial',
             fill: '#666666',
-            name: 'Bottom Text'
+            name: ''
           }
         ]
       }
@@ -75,7 +78,7 @@ export const sampleTemplates: Template[] = [
         type: 'group',
         x: 250,
         y: 250,
-        name: 'Mountain Scene Group',
+        name: '',
         children: [
           {
             type: 'image',
@@ -84,7 +87,7 @@ export const sampleTemplates: Template[] = [
             width: 200,
             height: 150,
             src: template2,
-            name: 'Mountain Image'
+            name: ''
           },
           {
             type: 'text',
@@ -94,55 +97,11 @@ export const sampleTemplates: Template[] = [
             fontSize: 28,
             fontFamily: 'Arial',
             fill: '#2C5F2D',
-            name: 'Caption'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'template-typography-1',
-    title: 'Stacked Type',
-    thumbnail: template3,
-    category: 'typography',
-    elements: [
-      {
-        type: 'group',
-        x: 250,
-        y: 250,
-        name: 'Typography Stack',
-        children: [
-          {
-            type: 'text',
-            x: 0,
-            y: 0,
-            text: 'DESIGN',
-            fontSize: 56,
-            fontFamily: 'Arial',
-            fill: '#000000',
-            name: 'Title Line 1'
-          },
-          {
-            type: 'text',
-            x: 0,
-            y: 60,
-            text: 'STUDIO',
-            fontSize: 56,
-            fontFamily: 'Arial',
-            fill: '#000000',
-            name: 'Title Line 2'
-          },
-          {
-            type: 'image',
-            x: 80,
-            y: 120,
-            width: 40,
-            height: 40,
-            src: template3,
-            name: 'Decorative Icon'
+            name: ''
           }
         ]
       }
     ]
   }
+  // Removed "Stacked Type" template to fix the issue
 ];

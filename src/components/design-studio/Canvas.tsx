@@ -22,7 +22,6 @@ const CanvasImageObject = ({
 
   useEffect(() => {
     if (isSelected && shapeRef.current) {
-      // Attach transformer when selected
       const tr = shapeRef.current.getLayer()?.findOne('.transformer') as Konva.Transformer;
       if (tr) {
         tr.nodes([shapeRef.current]);
@@ -35,6 +34,7 @@ const CanvasImageObject = ({
       image={image}
       ref={shapeRef}
       {...shapeProps}
+      name="" // Remove tooltip
       draggable
       onClick={onSelect}
       onTap={onSelect}
@@ -92,6 +92,7 @@ const CanvasTextObject = ({
     <Text
       ref={shapeRef}
       {...shapeProps}
+      name="" // Remove tooltip
       draggable
       onClick={onSelect}
       onTap={onSelect}
@@ -146,6 +147,7 @@ const CanvasGroupObject = ({
         <Text
           key={index}
           {...child}
+          name="" // Remove tooltip
           listening={false}
         />
       );
@@ -156,6 +158,7 @@ const CanvasGroupObject = ({
           key={index}
           image={image}
           {...child}
+          name="" // Remove tooltip
           listening={false}
         />
       );
@@ -167,6 +170,7 @@ const CanvasGroupObject = ({
     <Group
       ref={groupRef}
       {...shapeProps}
+      name="" // Remove tooltip
       draggable={!shapeProps.locked}
       onClick={onSelect}
       onTap={onSelect}

@@ -96,26 +96,49 @@ export const useCanvasStore = create<CanvasStore>((set, get) => ({
     back: 0
   },
   
-  setCurrentView: (view) => set({ currentView: view, selectedId: null }),
+  setCurrentView: (view) => set((state) => {
+  // Save history for current view before switching
+  const currentHistory = state.history[state.currentView];
+  const currentIndex = state.historyIndex[state.currentView];
+  const newHistory = currentHistory.slice(0, currentIndex + 1);
+  newHistory.push({ ...state.views[state.currentView] });
   
+  return {
+    currentView: view,
+    selectedId: null,
+    history: {
+      ...state.history,
+      [state.currentView]: newHistory
+    },
+    historyIndex: {
+      ...state.historyIndex,
+      [state.currentView]: newHistory.length - 1
+    }
+  };
+}),
+
   setTShirtColor: (color, applyToAll = false) => set((state) => {
     if (applyToAll) {
-      const newViews = { ...state.views };
-      Object.keys(newViews).forEach((view) => {
-        newViews[view as TShirtView].tshirtColor = color;
-      });
+      const newViews = Object.fromEntries(
+        Object.entries(state.views).map(([view, viewState]) => [
+          view,
+          { ...viewState, tshirtColor: color }
+        ])
+      );
       return { views: newViews };
-    }
-    return {
-      views: {
-        ...state.views,
-        [state.currentView]: {
-          ...state.views[state.currentView],
-          tshirtColor: color
+    } else {
+      return {
+        views: {
+          ...state.views,
+          [state.currentView]: {
+            ...state.views[state.currentView],
+            tshirtColor: color
+          }
         }
-      }
-    };
+      };
+    }
   }),
+
   
   addObject: (object) => set((state) => {
     const newObject = { 
