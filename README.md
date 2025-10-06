@@ -69,16 +69,6 @@ A modern, professional t-shirt design application built with React, TypeScript, 
 4. **Open in browser**
    Navigate to \`http://localhost:5173\`
 
-## 🛠️ Build for Production
-
-\`\`\`bash
-# Build the application
-npm run build
-
-# Preview production build
-npm run preview
-\`\`\`
-
 ## 📁 Project Structure
 
 \`\`\`
