@@ -83,31 +83,54 @@ npm run preview
 
 \`\`\`
 domine-design-studio/
-├── src/
-│   ├── components/
-│   │   ├── design-studio/
-│   │   │   ├── Canvas.tsx                # Main canvas component
-│   │   │   ├── ObjectControls.tsx        # Object editing controls
-│   │   │   ├── TemplatesPanel.tsx        # Template selection
-│   │   │   ├── TextPanel.tsx             # Text editing tools
-│   │   │   ├── TShirtColorPicker.tsx     # Color customization
-│   │   │   ├── TShirtMockup.tsx          # T-shirt preview
-│   │   │   └── ViewSwitcher.tsx          # View navigation
-│   │   └── ui/                           # Reusable UI components
-│   ├── store/
-│   │   └── canvasStore.ts                # Zustand state management
-│   ├── pages/
-│   │   └── designstudio.tsx              # Main design page
-│   ├── assets/
-│   │   ├── templates/                    # Design templates
-│   │   └── tshirt-mockup.png             # T-shirt mockup image
-│   └── data/
-│       └── sampleTemplates.ts            # Template data
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── vite.config.ts
 
+package.json
+
+vite.config.ts
+
+tsconfig.json
+
+tailwind.config.ts
+
+src/
+
+src/pages/
+
+src/pages/designstudio.tsx
+
+src/components/
+
+src/components/design-studio/
+
+src/components/design-studio/Canvas.tsx
+
+src/components/design-studio/ObjectControls.tsx
+
+src/components/design-studio/TShirtMockup.tsx
+
+src/components/design-studio/TShirtColorPicker.tsx
+
+src/components/design-studio/ViewSwitcher.tsx
+
+src/components/design-studio/TemplatesPanel.tsx
+
+src/components/design-studio/TextPanel.tsx
+
+src/components/ui/
+
+src/store/
+
+src/store/canvasStore.ts
+
+src/data/
+
+src/data/sampleTemplates.ts
+
+src/assets/
+
+src/assets/tshirt-mockup.png
+
+src/assets/templates/
 \`\`\`
 
 ## 🎮 Usage
