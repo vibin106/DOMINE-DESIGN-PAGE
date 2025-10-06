@@ -86,27 +86,28 @@ domine-design-studio/
 ├── src/
 │   ├── components/
 │   │   ├── design-studio/
-│   │   │   ├── Canvas.tsx              # Main canvas component
-│   │   │   ├── ObjectControls.tsx      # Object editing controls
-│   │   │   ├── TemplatesPanel.tsx      # Template selection
-│   │   │   ├── TextPanel.tsx           # Text editing tools
-│   │   │   ├── TShirtColorPicker.tsx   # Color customization
-│   │   │   ├── TShirtMockup.tsx        # T-shirt preview
-│   │   │   └── ViewSwitcher.tsx        # View navigation
-│   │   └── ui/                          # Reusable UI components
+│   │   │   ├── Canvas.tsx                # Main canvas component
+│   │   │   ├── ObjectControls.tsx        # Object editing controls
+│   │   │   ├── TemplatesPanel.tsx        # Template selection
+│   │   │   ├── TextPanel.tsx             # Text editing tools
+│   │   │   ├── TShirtColorPicker.tsx     # Color customization
+│   │   │   ├── TShirtMockup.tsx          # T-shirt preview
+│   │   │   └── ViewSwitcher.tsx          # View navigation
+│   │   └── ui/                           # Reusable UI components
 │   ├── store/
-│   │   └── canvasStore.ts              # Zustand state management
+│   │   └── canvasStore.ts                # Zustand state management
 │   ├── pages/
-│   │   └── designstudio.tsx            # Main design page
+│   │   └── designstudio.tsx              # Main design page
 │   ├── assets/
-│   │   ├── templates/                   # Design templates
-│   │   └── tshirt-mockup.png           # T-shirt mockup image
+│   │   ├── templates/                    # Design templates
+│   │   └── tshirt-mockup.png             # T-shirt mockup image
 │   └── data/
-│       └── sampleTemplates.ts          # Template data
+│       └── sampleTemplates.ts            # Template data
 ├── package.json
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── vite.config.ts
+
 \`\`\`
 
 ## 🎮 Usage
@@ -119,17 +120,6 @@ domine-design-studio/
 4. **Edit Objects** - Select an object to see editing controls
 5. **Customize** - Adjust size, rotation, position, and colors
 6. **Save** - Export your design or save for later
-
-### Keyboard Shortcuts
-
-| Action | Windows/Linux | Mac |
-|--------|---------------|-----|
-| Undo | Ctrl + Z | Cmd + Z |
-| Redo | Ctrl + Y | Cmd + Y |
-| Duplicate | Ctrl + D | Cmd + D |
-| Delete | Delete / Backspace | Delete / Backspace |
-| Move (1px) | Arrow Keys | Arrow Keys |
-| Move (10px) | Shift + Arrow | Shift + Arrow |
 
 ## 🎨 Customization
 
@@ -225,10 +215,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (\`git push origin feature/amazing-feature\`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👨‍💻 Author
 
 **Vibin**
@@ -241,18 +227,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Radix UI for accessible primitives
 - Konva.js for powerful canvas capabilities
 - Tailwind CSS for rapid styling
-
-## 📸 Screenshots
-
-### Design Studio Interface
-[Add screenshot of main interface]
-
-### Template Selection
-[Add screenshot of template panel]
-
-### Object Editing Controls
-[Add screenshot of editing panel]
-
----
 
 **Built with ❤️ by Vibin | Powered by React + TypeScript + Vite**
